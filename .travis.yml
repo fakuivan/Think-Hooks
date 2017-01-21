@@ -43,16 +43,18 @@ script:
     - ambuild
     
 before_deploy: 
+    - COMM_NUMBER=$(git rev-list --count master)
+    - FILE="think_hooks_n$COMM_NUMBER.zip"
     - cd $TRAVIS_BUILD_DIR/build/package/addons/sourcemod
-    - zip -r $TRAVIS_BUILD_DIR/think_hooks.zip ./extensions/ ./scripting/
+    - zip -r $TRAVIS_BUILD_DIR/$FILE ./extensions/ ./scripting/
     - cd $TRAVIS_BUILD_DIR
 
 deploy:
     provider: releases
     api_key:
         secure: E7x8bzKURuQKPcjXHhiyxWrfLlEuHkY9J4i43LM6cRgTIy6N7Ajatxr+QV5RuwPoW1chfYrICUPCmg2XIAmyxqGQc0KHIUmb3s4K1+enmwsxm7RDA95sJx3aCfQPxqEavNO22kFUlMgib67o2NIFD8986gpiUv07SE8DOiNd87aiaZZ4gXjQTEncYLutVRCAxkg5uEM1F2+23tgVaK5otiPDtniUqGu9hbnoaRCaoWbmWPJ2WD1d+xGoQOfHV2rhfruVhnKnUkWESFa0snJ5Yf4v4dQ/os5WZkBLnSWiIGtEU/eGuxxVMqfZOsLkfciGjgtIZ3w/OqVSSRHZgRUZREob89dLZ7+Rt/BPsQ5fU7k1b7jjCGawCMsYtva8f9wJUWnefOGg4w/Cw4F/izqRj5oV4Evre5BdYIsX1MC+THVmT3CbCeaZSB7QZ3X2ZRfCJYxn3k0Ywkte1bdI4SigfeE/LzP0UC20B3s0DAm4UJxgF5D0/2vGv3yfrpboYcPQpwZ4TJkNeNkAQzGRd7OaT2qVuko9H5r6j/gkLYXYy47d17in1XPKslX/sCYhfA6kSSwG+UR/KNGJKsr/vlI79lk5TnaN1FLpmh5ve1rvNCEnjB0giwCS+7MB+mkNr+zdtAcnbLi6pSRoPeEaMqXrCMENSz7mIPaHCSvivh0XnZg=
-    file: think_hooks.zip
+    file: $FILE
     on:
         repo: fakuivan/Think-Hooks
         tags: true
-        all_branches: true
+        branch: master
