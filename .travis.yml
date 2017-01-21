@@ -44,7 +44,7 @@ script:
     
 before_deploy: 
     - COMM_NUMBER=$(git rev-list --count master)
-    - FILE="think_hooks_n$COMM_NUMBER.zip"
+    - FILE="think_hooks-n$COMM_NUMBER-linux.zip"
     - cd $TRAVIS_BUILD_DIR/build/package/addons/sourcemod
     - zip -r $TRAVIS_BUILD_DIR/$FILE ./extensions/ ./scripting/
     - cd $TRAVIS_BUILD_DIR
