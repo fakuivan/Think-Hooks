@@ -40,7 +40,15 @@
 /* Basic information exposed publicly */
 #define SMEXT_CONF_NAME			"Think Hooks"
 #define SMEXT_CONF_DESCRIPTION	"Provides hooks to IServerGameDLL::Think"
-#define SMEXT_CONF_VERSION		"0.0.0.0"
+#ifdef AUTOVER_ENABLED
+
+#define SMEXT_CONF_VERSION		AUTOVER_TAG "." AUTOVER_COMMIT_NUMBER
+
+#else
+
+#define SMEXT_CONF_VERSION		"0.0.0.0" //autoversioning disabled
+
+#endif // AUTOVER_ENABLED
 #define SMEXT_CONF_AUTHOR		"fakuivan"
 #define SMEXT_CONF_URL			"https://forums.alliedmods.net/member.php?u=264797"
 #define SMEXT_CONF_LOGTAG		"THINK_HOOKS"

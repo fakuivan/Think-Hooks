@@ -23,7 +23,7 @@ else:
   project.sources += [os.path.join(ThinkHooks.sm_root, 'public', 'smsdk_ext.cpp')]
 
 project.sources += sourceFiles
-  
+
 for sdk_name in ThinkHooks.sdks:
   sdk = ThinkHooks.sdks[sdk_name]
   
