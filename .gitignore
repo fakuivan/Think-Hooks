@@ -243,3 +243,4 @@ ModelManifest.xml
 
 ## Ignore ambuild common direcotries
 /build/
+/obj-*/

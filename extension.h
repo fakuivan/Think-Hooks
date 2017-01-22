@@ -48,7 +48,7 @@
 #include "am-utility.h"
 #endif
 
-class MutexWrapper : public IMutex
+class MutexWrapper
 {
 public:
 	MutexWrapper() { m_pMutex = threader->MakeMutex(); }
