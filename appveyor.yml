@@ -1,0 +1,32 @@
+install:
+- cmd: git clone https://github.com/alliedmodders/sourcemod.git --recursive -b 1.8-dev %APPVEYOR_BUILD_FOLDER%\..\sourcemod
+- cmd: cd ..
+- cmd: appveyor DownloadFile https://raw.githubusercontent.com/alliedmodders/sourcemod/master/tools/checkout-deps.ps1 -FileName .\checkout-deps.ps1
+- ps: '& ".\checkout-deps.ps1"'
+
+build_script:
+- cmd: mkdir %APPVEYOR_BUILD_FOLDER%\build && cd %APPVEYOR_BUILD_FOLDER%\build
+- cmd: "\"%VS140COMNTOOLS%VsDevCmd.bat\""
+- cmd: python ..\configure.py --enable-optimize -s present
+- cmd: C:\Python27\Scripts\ambuild.bat
+
+after_build:
+- cmd: cd %APPVEYOR_BUILD_FOLDER%
+- ps: $env:FILE_TO_UPLOAD_NAME = "think_hooks-n{0}-windows.zip" -f (git rev-list --count HEAD)
+- ps: $env:FILE_TO_UPLOAD_RELATIVE = "build\{0}" -f $env:FILE_TO_UPLOAD_NAME
+- ps: $env:FILE_TO_UPLOAD_ABSOLUTE = "{0}\{1}" -f $env:APPVEYOR_BUILD_FOLDER, $env:FILE_TO_UPLOAD_RELATIVE
+
+- cmd: cd %APPVEYOR_BUILD_FOLDER%\build\package\addons\sourcemod\
+- cmd: 7z a %FILE_TO_UPLOAD_ABSOLUTE% * 
+
+artifacts:
+- path: $(FILE_TO_UPLOAD_RELATIVE)
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: Nup1VyJ60EDILS2GnPbjpNHqfP/uMi43mm4Opw5M+uTjcPxhJNGknXHK+kbk4eCY
+  artifact: $(FILE_TO_UPLOAD_RELATIVE)
+  draft: false
+  on:
+    appveyor_repo_tag: true
