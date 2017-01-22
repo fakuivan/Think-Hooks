@@ -43,7 +43,7 @@ script:
     - ambuild
     
 before_deploy: 
-    - COMM_NUMBER=$(git rev-list --count master)
+    - COMM_NUMBER=$(git rev-list --count HEAD)
     - FILE="think_hooks-n$COMM_NUMBER-linux.zip"
     - cd $TRAVIS_BUILD_DIR/build/package/addons/sourcemod
     - zip -r $TRAVIS_BUILD_DIR/$FILE ./extensions/ ./scripting/
