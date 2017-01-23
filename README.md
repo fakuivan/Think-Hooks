@@ -20,7 +20,7 @@ This extension provides hooks to ``IServerGameDLL::Think`` and exposes them via 
 2. Place it on your ``include`` folder
 3. ``#include "think_hooks.inc"`` from your script
 
-Now you are ready to use ``OnServerThink`` and ``RequestThink``, remember that documentation about these symbols can be found on [``think_hooks.inc``](https://github.com/fakuivan/Think-Hooks/blob/master/include/think_hooks.inc), they are documented using doxygen-like comments, just like all of the sourcemod API. Remember to redirect the end user to [this](https://github.com/fakuivan/Think-Hooks) page every time you publish a project that utilizes this extension.
+Now you are ready to use ``OnServerThink`` and ``RequestThink``, remember that documentation about these symbols can be found on [``think_hooks.inc``](https://github.com/fakuivan/Think-Hooks/blob/master/include/think_hooks.inc), they are documented using doxygen-like comments, just like all of the sourcemod API. **Remember to redirect the end user to [this](https://github.com/fakuivan/Think-Hooks/blob/master/README.md) page every time you publish a project that utilizes this extension.**
 
 ## Want to contribute?
 Fork this repo and issue a pull request.
