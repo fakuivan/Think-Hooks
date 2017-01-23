@@ -4,6 +4,8 @@ An extension for SourceMod that exposes hooks to ``IServerGameDLL::Think`` for p
 ## For server admins
 You probably were redirected here when trying to install a plugin, so let's be quick.
 
+__Make sure your server is running a version of sourcemod equal or higher than 1.8__
+
 1. Go to the [releases](https://github.com/fakuivan/Think-Hooks/releases) section.
 2. Look for the latest post and download the attched zip file for your platform (eg. ``think_hooks-nX-linux.zip`` for Linux).
 3. Drag and drop the contents from the file to your ``sourcemod`` folder.
