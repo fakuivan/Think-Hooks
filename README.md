@@ -1,4 +1,4 @@
-# Think-Hooks [![Build Status](https://travis-ci.org/fakuivan/Think-Hooks.svg?branch=master)](https://travis-ci.org/fakuivan/Think-Hooks) [![Build status](https://ci.appveyor.com/api/projects/status/o9ewtn209bp8k3l3/branch/master?svg=true)](https://ci.appveyor.com/project/fakuivan/think-hooks/branch/master)
+# Think-Hooks [![Build Status](https://travis-ci.org/fakuivan/Think-Hooks.svg?branch=master)](https://travis-ci.org/fakuivan/Think-Hooks) [![Build status](https://ci.appveyor.com/api/projects/status/o9ewtn209bp8k3l3/branch/master?svg=true)](https://ci.appveyor.com/project/fakuivan/think-hooks/branch/master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cb4e0d27721643fe9dcbb8cd9e3623dd)](https://www.codacy.com/app/fakuivan/Think-Hooks?utm_source=github.com&utm_medium=referral&utm_content=fakuivan/Think-Hooks&utm_campaign=badger)
 An extension for SourceMod that exposes hooks to ``IServerGameDLL::Think`` for plugins to use.
 
 ## For server admins
