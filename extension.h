@@ -48,6 +48,8 @@
 #include "am-utility.h"
 #endif
 
+#define LIB_NAME "think_hooks"
+
 class MutexWrapper
 {
 public:
@@ -87,7 +89,7 @@ public:
 	 * @brief This is called once all known extensions have been loaded.
 	 * Note: It is is a good idea to add natives here, if any are provided.
 	 */
-	virtual void SDK_OnAllLoaded();
+	 virtual void SDK_OnAllLoaded();
 
 	/**
 	 * @brief Called when the pause state is changed.

@@ -6,6 +6,8 @@
 #endif
 #define _think_hooks_included
 
+#define THINK_HOOKS_LIB_NAME	"think_hooks"	/**< You can use this macro to check ``LibraryExists(THINK_HOOKS_LIB_NAME)`` */
+
 /**
  * Called before every server think. Note that you should avoid
  * doing expensive computations or declaring large local arrays.
@@ -37,8 +39,8 @@ public __ext_think_hooks_SetNTVOptional()
 
 public Extension __ext_think_hooks = 
 {
-	name = "think_hooks",
-	file = "think_hooks.ext",
+	name = THINK_HOOKS_LIB_NAME,
+	file = THINK_HOOKS_LIB_NAME...".ext",
 #if defined AUTOLOAD_EXTENSIONS
 	autoload = 1,
 #else

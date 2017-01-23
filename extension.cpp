@@ -112,6 +112,7 @@ void ThinkHooks::SDK_OnAllLoaded()
 
 	//creating the global OnServerThink forward
 	m_pOnServerThink = forwards->CreateForward("OnServerThink", ET_Ignore, 0, NULL);
+	sharesys->RegisterLibrary(myself, LIB_NAME);
 	m_bReady = true;
 }
 
