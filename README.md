@@ -14,7 +14,7 @@ __Make sure your server is running a version of sourcemod equal or higher than 1
 ## For scripters
 This extension provides hooks to ``IServerGameDLL::Think`` and exposes them via functions that behave similarly to ``OnGameFrame`` and ``RequestFrame``, the only difference is that the ones that this extension provides (``OnServerThink`` and ``RequestThink``) are called even when the server is not generating frames (hibernating), this is specially useful when writing plugins that use forwards triggered by networking events, because these can happen even if the server is on the main game loop or not, and you need to make sure actions are being performed.
 
-###To use this extension:
+### To use this extension:
 
 1. Download the include [``think_hooks.inc``](https://github.com/fakuivan/Think-Hooks/blob/master/include/think_hooks.inc)
 2. Place it on your ``include`` folder
